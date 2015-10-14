@@ -1,8 +1,5 @@
 var app = function() {
   Chart.defaults.global.showTooltips = false;
-  var time = '>2015-09-12';
-  var timeTwo = '>2015-09-12';
-  var timeFive = '>2015-09-12';
   var displayNumberOne = 10;
   var displayNumberThree = 5;
   var displayNumberFour = 10;
@@ -31,6 +28,9 @@ var app = function() {
   var threeCurrentValues;
   var fourCurrentValues;
   var fiveCurrentValues;
+  var time = '>2015-09-12';
+  var timeTwo = '>2015-09-12';
+  var timeFive = '>2015-09-12';
 
   function makeRequest(query, chartNumber, queryParam) {
     if (chartNumber === 'one') {
@@ -89,7 +89,6 @@ var app = function() {
         } else if (chartNumber === 'five') {
           chartFiveCache[queryParam] = queryResult;
           fiveCurrentValues = queryResult;
-          console.log(queryResult);
           displayChartOneThreeFourFive(queryResult.items.slice(0, displayNumberFive), 'five');
         }
       }
