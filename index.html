@@ -13,9 +13,9 @@
     <div class="chartOneWrapper">
       <div class="titleWrapper">
         <div class="titleInnerWrap">
-          <input class="firstInput" type="number" value="10" min="10" max="30" onchange="app.changeNumber(this.value, this.className)">
+          <input class="firstInput" type="number" value="10" min="10" max="30" onchange="app.changeNumber(this.value, 'one')">
           <p>most-starred repos in the last</p>
-          <select class="selectFirst" onchange="app.changeTime(this.value, this.className)">
+          <select class="selectFirst" onchange="app.changeTime(this.value, 'one')">
             <option value="month">month</option>
             <option value="sixMonths">6 months</option>
             <option value="year">year</option>
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="container" style="width: 500px; height: 500px;">
-        <canvas id="chartOne" width="500px" height="500px"></canvas>
+        <canvas id="one" width="500px" height="500px"></canvas>
       </div>
     </div>
 
@@ -31,7 +31,7 @@
       <div class="titleWrapper">
         <div class="titleInnerWrap">
           <p>Most popular programming languages overall in the last</p>
-          <select class="selectSecond" onchange="app.changeTime(this.value, this.className)">
+          <select class="selectSecond" onchange="app.changeTime(this.value, 'two')">
             <option value="month">month</option>
             <option value="sixMonths">6 months</option>
             <option value="year">year</option>
@@ -46,7 +46,7 @@
     <div class="chartThreeWrapper">
       <div class="titleWrapper">
         <div class="titleInnerWrap">
-          <input class="thirdInput" type="number" value="5" min="5" max="30" onchange="app.changeNumber(this.value, this.className)">
+          <input class="thirdInput" type="number" value="5" min="5" max="30" onchange="app.changeNumber(this.value, 'three')">
           <p>most-starred repos in</p>
           <select class="selectThird" onchange="app.changeLanguage(this.value, this.className)">
             <option selected value="ruby">Ruby</option>
@@ -57,14 +57,14 @@
         </div>
       </div>
       <div class="container" style="width: 500px; height: 500px;">
-        <canvas id="chartThree" width="500px" height="500px"></canvas>
+        <canvas id="three" width="500px" height="500px"></canvas>
       </div>
     </div>
 
     <div class="chartFourWrapper">
       <div class="titleWrapper">
         <div class="titleInnerWrap">
-          <input class="fourthInput" type="number" value="10" min="10" max="30" onchange="app.changeNumber(this.value, this.className)">
+          <input class="fourthInput" type="number" value="10" min="10" max="30" onchange="app.changeNumber(this.value, 'four')">
           <p>most popular users in</p>
           <select class="selectFourth" onchange="app.changeLanguage(this.value, this.className)">
             <option selected value="ruby">Ruby</option>
@@ -75,16 +75,16 @@
         </div>
       </div>
       <div class="container" style="width: 500px; height: 500px;">
-        <canvas id="chartFour" width="500px" height="500px"></canvas>
+        <canvas id="four" width="500px" height="500px"></canvas>
       </div>
     </div>
 
     <div class="chartFiveWrapper">
       <div class="titleWrapper">
         <div class="titleInnerWrap">
-          <input class="fifthInput" type="number" value="10" min="10" max="30" onchange="app.changeNumber(this.value, this.className)">
+          <input class="fifthInput" type="number" value="10" min="10" max="30" onchange="app.changeNumber(this.value, 'five')">
           <p>most-forked repos in the last</p>
-          <select class="selectFifth" onchange="app.changeTime(this.value, this.className)">
+          <select class="selectFifth" onchange="app.changeTime(this.value, 'five')">
             <option value="month">month</option>
             <option value="sixMonths">6 months</option>
             <option value="year">year</option>
@@ -92,7 +92,7 @@
         </div>
       </div>
       <div class="container" style="width: 500px; height: 500px;">
-        <canvas id="chartFive" width="500px" height="500px"></canvas>
+        <canvas id="five" width="500px" height="500px"></canvas>
       </div>
     </div>
 
