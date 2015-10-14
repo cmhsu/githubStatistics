@@ -47,6 +47,7 @@ table {
   border-spacing: 0;
 }
 
+
 /*My CSS starts below here*/
 body {
   background-color: rgba(2, 255, 171, 0.44);
@@ -80,7 +81,6 @@ input {
   background-color: #ffffff;
   width: 600px;
   margin: 70px auto 0px auto;
-  /*padding: 30px;*/
   opacity: 0.85;
   filter: alpha(opacity=85);
   border-radius: 10px;
@@ -104,7 +104,6 @@ input {
   background-color: #2ca370;
   border-radius: 10px 10px 0px 0px;
   vertical-align: middle;
-  /*padding: 25px 0px 25px 0;*/
 }
 
 .titleInnerWrap {
