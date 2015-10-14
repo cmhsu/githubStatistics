@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Github Statistics</title>
+  <link href="app.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Quattrocento+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Github Statistics</h1>
+
+    <div class="chartOneWrapper">
+      <div class="titleWrapper">
+        <div class="titleInnerWrap">
+          <input class="firstInput" type="number" value="10" min="10" max="30" onchange="app.changeNumber(this.value, this.className)">
+          <p>most-starred repos in the last</p>
+          <select class="selectFirst" onchange="app.changeTime(this.value, this.className)">
+            <option value="month">month</option>
+            <option value="sixMonths">6 months</option>
+            <option value="year">year</option>
+          </select>
+        </div>
+      </div>
+      <!--<div id="queryOne"></div>-->
+      <div class="container" style="width: 500px; height: 500px;">
+        <canvas id="chartOne" width="500px" height="500px"></canvas>
+      </div>
+    </div>
+
+    <div class="chartTwoWrapper">
+      <div class="titleWrapper">
+        <div class="titleInnerWrap">
+          <p>Most popular programming languages overall in the last</p>
+          <select class="selectSecond" onchange="app.changeTime(this.value, this.className)">
+            <option value="month">month</option>
+            <option value="sixMonths">6 months</option>
+            <option value="year">year</option>
+          </select>
+        </div>
+      </div>
+      <div class="container" style="width: 500px; height: 500px;">
+        <canvas id="chartTwo" width="500" height="500"></canvas>
+      </div>
+    </div>
+
+    <div class="chartThreeWrapper">
+      <div class="titleWrapper">
+        <div class="titleInnerWrap">
+          <input class="thirdInput" type="number" value="5" min="5" max="30" onchange="app.changeNumber(this.value, this.className)">
+          <p>most-starred repos in</p>
+          <select class="selectThird" onchange="app.changeLanguage(this.value, this.className)">
+            <option selected value="ruby">Ruby</option>
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="objective-c">Objective-C</option>
+          </select>
+        </div>
+      </div>
+      <div class="container" style="width: 500px; height: 500px;">
+        <canvas id="chartThree" width="500px" height="500px"></canvas>
+      </div>
+    </div>
+
+    <div class="chartFourWrapper">
+      <div class="titleWrapper">
+        <div class="titleInnerWrap">
+          <input class="fourthInput" type="number" value="10" min="10" max="30" onchange="app.changeNumber(this.value, this.className)">
+          <p>most popular users in</p>
+          <select class="selectFourth" onchange="app.changeLanguage(this.value, this.className)">
+            <option selected value="ruby">Ruby</option>
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="objective-c">Objective-C</option>
+          </select>
+        </div>
+      </div>
+      <div class="container" style="width: 500px; height: 500px;">
+        <canvas id="chartFour" width="500px" height="500px"></canvas>
+      </div>
+    </div>
+
+    <div class="chartFiveWrapper">
+      <div class="titleWrapper">
+        <div class="titleInnerWrap">
+          <input class="fifthInput" type="number" value="10" min="10" max="30" onchange="app.changeNumber(this.value, this.className)">
+          <p>most-forked repos in the last</p>
+          <select class="selectFifth" onchange="app.changeTime(this.value, this.className)">
+            <option value="month">month</option>
+            <option value="sixMonths">6 months</option>
+            <option value="year">year</option>
+          </select>
+        </div>
+      </div>
+      <!--<div id="queryOne"></div>-->
+      <div class="container" style="width: 500px; height: 500px;">
+        <canvas id="chartFive" width="500px" height="500px"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="Chart.js-master/Chart.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</body>
+</html>

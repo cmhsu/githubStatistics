@@ -1,0 +1,131 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*My CSS starts below here*/
+body {
+  background-color: rgba(2, 255, 171, 0.44);
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 20px;
+}
+
+p {
+  display: inline;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  color: #ffffff;
+}
+
+input {
+  width: 30px;
+  /*background-color: #000;*/
+  /*color: #fff;*/
+}
+
+.chartOneWrapper,
+.chartTwoWrapper,
+.chartThreeWrapper,
+.chartFourWrapper,
+.chartFiveWrapper {
+  background-color: #ffffff;
+  width: 600px;
+  margin: 70px auto 0px auto;
+  /*padding: 30px;*/
+  opacity: 0.85;
+  filter: alpha(opacity=85);
+  border-radius: 10px;
+}
+
+.chartOneWrapper {
+  margin-top: 30px;
+}
+
+.chartFiveWrapper {
+  margin-bottom: 70px;
+}
+
+.container {
+  margin: 5px auto 5px auto;
+}
+
+.titleWrapper {
+  text-align: center;
+  height: 50px;
+  background-color: #2ca370;
+  border-radius: 10px 10px 0px 0px;
+  vertical-align: middle;
+  /*padding: 25px 0px 25px 0;*/
+}
+
+.titleInnerWrap {
+  vertical-align: middle;
+  padding: 17px 0px 17px 0;
+}
+
+input, select {
+  position: relative;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  border-radius: 3px;
+  border: solid 1px #9a9a9a;
+  transition: border 0.5s, box-shadow 0.5s;
+  padding: 2px;
+  vertical-align: middle;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border: solid 1px #000000;
+  box-shadow: 0 0 3px 1px #aeaeae;
+}
+
