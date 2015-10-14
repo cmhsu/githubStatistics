@@ -32,11 +32,10 @@ var app = function() {
     if (cache[chartNumber] && cache[chartNumber][queryParam]) {
       currentValues[chartNumber] = cache[chartNumber][queryParam];
       if (chartNumber === 'two') {
-        displayChartTwo(currentValues[chartNumber].items);
-        console.log(currentValues[chartNumber].items);
+        displayChart(currentValues[chartNumber].items, chartNumber);
         return;
       } else {
-        displayChartOneThreeFourFive(currentValues[chartNumber].items.slice(0, displayNumbers[chartNumber]), chartNumber);
+        displayChart(currentValues[chartNumber].items.slice(0, displayNumbers[chartNumber]), chartNumber);
         return;
       }
     }
@@ -51,9 +50,9 @@ var app = function() {
         cache[chartNumber][queryParam] = queryResult;
         currentValues[chartNumber] = queryResult;
         if (chartNumber === 'two') {
-          displayChartTwo(queryResult.items);
+          displayChart(queryResult.items, chartNumber);
         } else {
-          displayChartOneThreeFourFive(queryResult.items.slice(0, displayNumbers[chartNumber]), chartNumber);
+          displayChart(queryResult.items.slice(0, displayNumbers[chartNumber]), chartNumber);
         }
       }
     };
@@ -78,12 +77,15 @@ var app = function() {
 
   function changeNumber(value, chartNumber) {
     displayNumbers[chartNumber] = value;
-    displayChartOneThreeFourFive(currentValues[chartNumber].items.slice(0, value), chartNumber);
+    displayChart(currentValues[chartNumber].items.slice(0, value), chartNumber);
   }
 
-  function displayChartOneThreeFourFive(info, chartNumber) {
+  function displayChart(info, chartNumber) {
+    var languages = {};
     if (chartOne && chartNumber === 'one') {
       chartOne.destroy();
+    } else if (chartTwo && chartNumber === 'two') {
+      chartTwo.destroy();
     } else if (chartThree && chartNumber === 'three') {
       chartThree.destroy();
     } else if (chartFour && chartNumber === 'four') {
@@ -102,6 +104,22 @@ var app = function() {
         labels.push(info[i].name);
         data.push(info[i].stargazers_count);
       }
+    } else if (chartNumber === 'two') {
+      for (var i = 0; i < info.length; i++) {
+        if (!languages[info[i].language]) {
+          languages[info[i].language] = 1;
+        } else {
+          languages[info[i].language]++;
+        }
+      }
+      delete languages[null];
+      for (var language in languages) {
+        data.push(languages[language]);
+        labels.push(language);
+      }
+      data.sort(function (a, b) {
+        return b - a
+      });
     } else if (chartNumber === 'four') {
       for (var i = 0; i < info.length; i++) {
         labels.push(info[i].login);
@@ -129,6 +147,10 @@ var app = function() {
       chartOne = new Chart(ctx).Bar(data, {
         scaleShowGridLines: false
       });
+    } else if (chartNumber === 'two') {
+      chartTwo = new Chart(ctx).Bar(data, {
+        scaleShowGridLines: false
+      });
     } else if (chartNumber === 'three') {
       chartThree = new Chart(ctx).Bar(data, {
         scaleShowGridLines: false
@@ -142,46 +164,6 @@ var app = function() {
         scaleShowGridLines: false
       });
     }
-  }
-
-  function displayChartTwo(info) {
-    var languages = {};
-    var data = [];
-    var labels = [];
-    if (chartTwo) {
-      chartTwo.destroy();
-    }
-    var ctx = document.getElementById('chartTwo').getContext('2d');
-    for (var i = 0; i < info.length; i++) {
-      if (!languages[info[i].language]) {
-        languages[info[i].language] = 1;
-      } else {
-        languages[info[i].language]++;
-      }
-    }
-    delete languages[null];
-    for (var language in languages) {
-      data.push(languages[language]);
-      labels.push(language);
-    }
-    data.sort(function (a, b) {
-      return b - a
-    });
-    var data = {
-      labels: labels,
-      datasets: [
-        {
-          fillColor: '#5AD3D1',
-          strokeColor: '#5AD3D1',
-          highlightFill: '#5AD3D1',
-          highlightStroke: '#5AD3D1',
-          data: data
-        }
-      ]
-    };
-    chartTwo = new Chart(ctx).Bar(data, {
-      scaleShowGridLines: false
-    });
   }
 
   function showTooltip(chart) {
