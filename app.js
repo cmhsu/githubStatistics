@@ -69,9 +69,9 @@ var app = function() {
     } else if (value === 'year') {
       times[chartNumber] = '>2014-10-12';
     }
-    if (chartNumber === 'five') {
-      makeRequest('https://api.github.com/search/repositories?q=created:' + times[chartNumber] + '&sort=forks&per_page=100&page=1', 'five', times[chartNumber]);
-    } else if (chartNumber === 'one' || chartNumber === 'two') {
+    if (chartNumber === 'five' || chartNumber === 'two') {
+      makeRequest('https://api.github.com/search/repositories?q=created:' + times[chartNumber] + '&sort=forks&per_page=100&page=1', chartNumber, times[chartNumber]);
+    } else if (chartNumber === 'one' ) {
       makeRequest('https://api.github.com/search/repositories?q=created:' + times[chartNumber] + '&sort=stars&per_page=100&page=1', chartNumber, times[chartNumber]);
     }
   }
@@ -215,7 +215,7 @@ var app = function() {
   }
 
   makeRequest(queries[0], 'one', times.one);
-  makeRequest(queries[0], 'two', times.two);
+  makeRequest(queries[3], 'two', times.two);
   makeRequest(queries[1], 'three', languageThird);
   makeRequest(queries[2], 'four', languageFourth);
   makeRequest(queries[3], 'five', times.five);
