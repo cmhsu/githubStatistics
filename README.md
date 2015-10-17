@@ -1,3 +1,3 @@
 # githubStatistics
 
-A project written in pure JavaScipt and Charts.js that uses the Github API to display some interesting statistics.
+A project that uses pure JavaScipt, Charts.js, and the Github API to display some interesting statistics.
